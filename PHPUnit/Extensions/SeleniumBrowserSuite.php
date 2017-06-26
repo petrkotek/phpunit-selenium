@@ -54,7 +54,7 @@
  * @link       http://www.phpunit.de/
  * @since      Class available since Release 1.2.6
  */
-class PHPUnit_Extensions_SeleniumBrowserSuite extends PHPUnit_Framework_TestSuite
+class PHPUnit_Extensions_SeleniumBrowserSuite extends \PHPUnit\Framework\TestSuite
 {
     /**
      * Overriding the default: Selenium suites are always built from a TestCase class.
@@ -86,10 +86,10 @@ class PHPUnit_Extensions_SeleniumBrowserSuite extends PHPUnit_Framework_TestSuit
         $this->browserOnAllTests($this, $browser);
     }
 
-    private function browserOnAllTests(PHPUnit_Framework_TestSuite $suite, array $browser)
+    private function browserOnAllTests(\PHPUnit\Framework\TestSuite $suite, array $browser)
     {
         foreach ($suite->tests() as $test) {
-            if ($test instanceof PHPUnit_Framework_TestSuite) {
+            if ($test instanceof \PHPUnit\Framework\TestSuite) {
                 $this->browserOnAllTests($test, $browser);
             } else {
                 $test->setupSpecificBrowser($browser);

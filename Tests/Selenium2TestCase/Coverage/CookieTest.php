@@ -4,7 +4,7 @@ class Tests_Selenium2TestCase_Coverage_CookieTest extends Tests_Selenium2TestCas
     // this is a dummy URL (returns down coverage data in HTML), but Firefox still sets domain cookie, which is what's needed
     protected $coverageScriptUrl = 'http://127.0.0.1:8080/coverage/dummy.html';
 
-    public function run(PHPUnit_Framework_TestResult $result = NULL)
+    public function run(\PHPUnit\Framework\TestResult $result = NULL)
     {
         // make sure code coverage collection is enabled
         if ($result === NULL) {
